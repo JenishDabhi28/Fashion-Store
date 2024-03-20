@@ -216,6 +216,15 @@ const Signup = () => {
                 Sign up
               </button>
             </div>
+            <p className="mt-10 text-center text-xl text-gray-500">
+            Already Have acc?{' '}
+            <NavLink
+              to="/login"
+              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 text-xl"
+            >
+             Login Here
+            </NavLink>
+          </p>
           </form>
         </div>
       </div>
