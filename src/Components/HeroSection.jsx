@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <>
       <section className="flex flex-col items-center justify-center h-screen">
-        <div className="w-full sm:w-auto">
+        <div className="w-full sm:w-4/5 md:w-3/5 lg:w-2/5 xl:w-1/3">
           <img
             src="https://media.istockphoto.com/id/1059156958/photo/pure-feelings.jpg?s=1024x1024&w=is&k=20&c=fDzMLNxXbBRBbrywwBXd3pxVWaZ-POTKLBODHIvL_sc="
             className="w-full h-auto"

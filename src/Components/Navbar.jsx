@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import shopIcon from "./Images/image.png";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaCartShopping } from "react-icons/fa6";
@@ -33,6 +33,16 @@ const Navbar = () => {
 
   const [menu, setMenu] = useState(false);
 
+  useEffect(() => {
+    if (menu) {
+      // Disable scrolling on mobile when menu is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable scrolling on mobile when menu is closed
+      document.body.style.overflow = "auto";
+    }
+  }, [menu]);
+
   return (
     <>
       <nav className="w-full bg-gray-800 flex items-center justify-between z-10 p-4">
@@ -63,6 +73,7 @@ const Navbar = () => {
 
           <NavLink to="/Cart" className="relative">
             <FaCartShopping className="text-xl sm:text-3xl" />
+            
             {cartproduct.length > 0 && (
               <span className="absolute top-0 right-0 inline-block w-4 h-4 bg-red-500 rounded-full text-white text-xs flex items-center justify-center">
                 {cartproduct.length}
@@ -77,6 +88,7 @@ const Navbar = () => {
             />
             {isAuthenticate && <FaUserCheck className="text-xl sm:text-3xl" />}
           </div>
+          {isAuthenticate && <span className="text-white">{userprofile}</span>}
         </div>
       </nav>
 
