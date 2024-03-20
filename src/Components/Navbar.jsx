@@ -18,7 +18,9 @@ const Navbar = () => {
     userprofile,
     isAuthenticate,
     filter: { text },
+   
   } = Myprovider();
+
 
   const signout = useNavigate();
 
@@ -32,6 +34,7 @@ const Navbar = () => {
   };
 
   const [menu, setMenu] = useState(false);
+  
 
   useEffect(() => {
     if (menu) {
@@ -43,6 +46,7 @@ const Navbar = () => {
     }
   }, [menu]);
 
+ 
   return (
     <>
       <nav className="w-full bg-gray-800 flex items-center justify-between z-10 p-4">
@@ -65,8 +69,10 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search"
-              className="w-32 sm:w-48 h-10 px-10 text-sm sm:text-base rounded-full bg-gray-200 outline-none"
+              className="w-48 h-10 ps-10 text-xl rounded-full outline-none"
+              style={{ background: "rgba(236, 240, 241,1.0)" }}
               onChange={SearchAllProduct}
+              name="text"
               value={text}
             />
           </div>
@@ -164,3 +170,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
